@@ -80,3 +80,37 @@ Once we have the prerequisites, we can read about the Laravel installation. Ther
 ```
 
 What about installing with Laravel Sail? This is an option based on a Docker container: it contains your full environment (PHP, Apache, ...) and is specific to your project. Since we already have most of what we need, we'll actually use our available local setup.
+
+- push to git init repo `git remote add origin [copied web address]`
+
+# ERROR
+
+zsh: command not found: composer
+
+read more: https://stackoverflow.com/questions/25018894/osx-bash-composer-command-not-found/25022888
+
+The path /usr/local/bin/composer is not in your PATH, executables in that folder won't be found.
+
+1. Delete the folder /usr/local/bin/composer
+
+> https://unix.stackexchange.com/questions/577637/where-is-usr-local-in-the-linux-there-is-no-local-folder
+
+> usr stands for "Unix System Resources"; there is no connection to any "user folder". What does ls -d /usr/local print for you? What does ls /usr print?
+
+> There should be a folder called /usr/local. It's not in /home/user. Run ls -l /usr/local and you'll see it. The command echo $PATH should also show /usr/local/bin as one of the directories.
+
+> usr does not stand for user. The folder is actually located at /usr/local/ you can try cd /usr/local/ to change your directory to it.
+
+2. then run
+
+$ mv composer.phar /usr/local/bin/composer
+
+This moves composer.phar into /usr/local/bin/ and renames it into composer (which is still an executable, not a folder).
+
+Then just use it like:
+
+$ composer ...
+
+# try again with setting PATH in the
+
+- Set PATH
