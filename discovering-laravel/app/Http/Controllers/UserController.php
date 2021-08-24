@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-// namespace App\Http\Controllers\UserController;
-
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -18,5 +16,4 @@ class Controller extends BaseController
         // TODO: prepare my data , then load view
         return view('user'); 
     }
-    
 }
