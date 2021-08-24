@@ -14,12 +14,14 @@
 
 Composer is a tool that helps you manage any PHP installations, as npm can do for JS. You can install it locally (available project wide) or globally (system wide, recommended). If you have any trouble, you might want to read about how the [PATH](https://superuser.com/questions/284342/what-are-path-and-other-environment-variables-and-how-can-i-set-or-use-them) variable determines things to load on startup (so they can be accessed anywhere)
 
+RETRY: https://askubuntu.com/questions/116960/global-installation-of-composer-manual
+
 1. Open a terminal and navigate to your user directory, ie cd /User/<USER_NAME>/
    Run this command shown below to download Composer. This will create a Phar (PHP Archive) file called composer.phar:
 
 curl -sS https://getcomposer.org/installer | php
 
-> The curl utility is a command line tool available on Unix, Linux, Mac OS X, Windows, and many other platforms. curl provides easy access to the HTTP protocol (among others) directly from the command line and is therefore an ideal way of interacting with CouchDB over the HTTP REST API.
+> The `curl` utility is a command line tool available on Unix, Linux, Mac OS X, Windows, and many other platforms. curl provides easy access to the HTTP protocol (among others) directly from the command line and is therefore an ideal way of interacting with CouchDB over the HTTP REST API.
 
 2. Now we move composer.phar file to a directory
 
@@ -27,7 +29,7 @@ sudo mv composer.phar /usr/local/bin/
 
 - [!] If you like to install it only for your user and avoid requiring root permissions, you can use ~/.local/bin instead of ~/.local/bin/composer which is available by default on some Linux distributions.
 
-> sudo is a program for Unix-like computer operating systems that allows users to run programs with the security privileges of another user, by default the superuser. It originally stood for "superuser do" as the older versions of sudo were designed to run commands only as the superuser.
+> `sudo` is a program for Unix-like computer operating systems that allows users to run programs with the security privileges of another user, by default the superuser. It originally stood for "superuser do" as the older versions of sudo were designed to run commands only as the superuser.
 
 Now run `composer` in order to run Composer instead of `php composer.phar`.
 
@@ -35,7 +37,7 @@ Now run `composer` in order to run Composer instead of `php composer.phar`.
 
 sudo chmod 755 /usr/local/bin/composer.phar
 
-> chmod 755 sets the 755 permission for a file. 755 means full permissions for the owner and read and execute permission for others.
+> `chmod 755` sets the 755 permission for a file. 755 means full permissions for the owner and read and execute permission for others.
 
 4. Next, we need to let Bash know where to execute Composer:
 
@@ -95,15 +97,40 @@ The path /usr/local/bin/composer is not in your PATH, executables in that folder
 
 > https://unix.stackexchange.com/questions/577637/where-is-usr-local-in-the-linux-there-is-no-local-folder
 
-> usr stands for "Unix System Resources"; there is no connection to any "user folder". What does ls -d /usr/local print for you? What does ls /usr print?
+> `usr` stands for "Unix System Resources"; there is no connection to any "user folder". What does ls -d /usr/local print for you? What does ls /usr print?
 
 > There should be a folder called /usr/local. It's not in /home/user. Run ls -l /usr/local and you'll see it. The command echo $PATH should also show /usr/local/bin as one of the directories.
 
 > usr does not stand for user. The folder is actually located at /usr/local/ you can try cd /usr/local/ to change your directory to it.
 
-2. then run
+- cd /user/local/bin
+- ls
+- rm composer.phar
 
-$ mv composer.phar /usr/local/bin/composer
+> this gives error rm: composer.phar: Permission denied
+> https://stackoverflow.com/questions/30956424/permission-denied-for-composer-in-usr-local-bin
+
+- sudo rm /usr/local/bin/composer.phar
+
+AND Delete cache folder
+
+- /home/<user>/.composer
+
+cd ~/.cache/composer (cd ~/.cache/composer should be cd ~/.composer/cache)
+
+====== then download again
+
+- Download again:
+
+* curl -sS https://getcomposer.org/installer | php
+
+- Change permission
+
+* chmod 755 composer.phar
+
+- Move and rename
+
+* sudo mv composer.phar /usr/local/bin/composer
 
 This moves composer.phar into /usr/local/bin/ and renames it into composer (which is still an executable, not a folder).
 
@@ -113,4 +140,15 @@ $ composer ...
 
 # try again with setting PATH in the
 
-- Set PATH
+# Shortcut TL;DR
+
+```
+* Download again:
+~ curl -sS https://getcomposer.org/installer | php
+
+* Change permission
+~ chmod 755 composer.phar
+
+* Move and rename
+~ sudo mv composer.phar /usr/local/bin/composer
+```
