@@ -66,6 +66,9 @@ Route::get('/user', [Controller::class, 'user']);
 
 Route::get('/home', [Controller::class, 'home']);
 
+Route::get('/blog', [Controller::class, 'blog']);
+
+
 // get view for server
 // a route will only respond to a specific type of request (GET or POST for example)
 Route::get('/contact', [Controller::class, 'contact']);
