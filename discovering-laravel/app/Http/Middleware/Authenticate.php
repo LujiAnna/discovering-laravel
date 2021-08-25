@@ -19,3 +19,6 @@ class Authenticate extends Middleware
         }
     }
 }
+
+// Middleware btn Router & Controller by injecting logic
+// eg making sure are authenticated , etc

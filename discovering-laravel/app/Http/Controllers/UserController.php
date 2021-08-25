@@ -16,4 +16,5 @@ class Controller extends BaseController
         // TODO: prepare my data , then load view
         return view('user'); 
     }
+    
 }
