@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 // namespace App\Http\Controllers\UserController;
 
 // add the laravel extension
-// use App-model - Blog // and for Comments 
 
-use App\Models\Blog;
+use Illuminate\Http\Request;
+
+use App\Models\Blog; // do same for Comments, Posts classes/models etc
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -34,7 +35,8 @@ class Controller extends BaseController
         
         // get means execute
         $blog = Blog::get();
-         dd($blog);
+        //  dd($blog);
+        return $blog;
 
         // connect blog with posts
         // avoid n+1 problem: query PLUS foreach
@@ -58,13 +60,15 @@ class Controller extends BaseController
 
     public function contact()
     {
-        // TODO: prepare my data , then load view
         return View::make('contact');   
     }
 
-    public function submitContact()
+    public function submitContact(Request $request)
     {
-        // TODO: show data after loading view, 
+        // show data after loading view
+
+        // return View::make('contact');   
+        // return "Submitted Contact"; 
         // dd('chicken'); //die and dump (like var dump)
 
         // add form name
@@ -72,10 +76,31 @@ class Controller extends BaseController
 
         // read docs
         // return request() -> only(['name', 'location']);
-        return request() -> only(['title', 'body']);
 
-        // return View::make('contact');   
-        // return "Submitted Contact";   
+        // return request() -> only(['title', 'body']);
+
+        // foreach (Blog::all() as $blog) {
+        //     echo $blog->title;
+        //     echo '<br>';
+        // }
+
+        // Use eloquent to save the data after a form submit.
+           /**
+     * Store a new flight in the database.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+       
+            // Validate the request...
+
+            $blog = new Blog;
+
+            $blog->title = $request->title;
+            $blog->body = $request->body;
+
+            $blog->save();
+          
     }
 
 

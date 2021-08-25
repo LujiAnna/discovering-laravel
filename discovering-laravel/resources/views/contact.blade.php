@@ -9,7 +9,9 @@
     <!-- <p>Hello, @ double brackets with no $ sign left of variable.</p> -->
 
     <form action="" method="post">
+        <!-- validate request: https://laravel.com/docs/8.x/blade#csrf-field -->
         @csrf
+       <!-- spoofing: Since HTML forms can't make PUT, PATCH, or DELETE requests -->
 
         <!-- "title" => "first title"
         "body" => "first body" -->

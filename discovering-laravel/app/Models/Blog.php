@@ -23,5 +23,6 @@ class Blog extends Model
 // Error: Class 'App\Http\Controllers\Blog' not found
 // Try: to use port 3306 ? 
 // or try: open from localhost http://localhost/discovering-laravel/discovering-laravel/public/home
+// solution: refresh the table with  php artisan migrate:fresh and php artisan db:seed
 
 // join with Eloquent
