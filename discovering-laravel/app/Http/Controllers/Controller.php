@@ -35,8 +35,17 @@ class Controller extends BaseController
 
     public function submitContact()
     {
-        // TODO: process form contact , then load view
-        return "Submitted Contact";   
+        // TODO: show data after loading view, 
+        // dd('chicken'); //die and dump (like var dump)
+
+        // add form name
+        // return request() -> input('name');
+
+        return request() -> only(['name', 'location']);
+
+
+        // return View::make('contact');   
+        // return "Submitted Contact";   
     }
 
     

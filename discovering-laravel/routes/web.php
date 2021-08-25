@@ -66,7 +66,12 @@ Route::get('/user', [Controller::class, 'user']);
 
 Route::get('/home', [Controller::class, 'home']);
 
-Route::get('/contact', [Controller::class, 'contact'])->name('contact');
+// get view for server
+// a route will only respond to a specific type of request (GET or POST for example)
+Route::get('/contact', [Controller::class, 'contact']);
+
+// post for form
+// Add a route that will react to the form submit (POST method). You'll also need an extra function in your controller.
 Route::post('/contact', [Controller::class, 'submitContact']);
 // can do a patch, put, delete requests
 
