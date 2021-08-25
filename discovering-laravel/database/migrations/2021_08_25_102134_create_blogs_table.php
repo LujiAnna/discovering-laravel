@@ -10,11 +10,17 @@ class CreateBlogsTable extends Migration
      * Run the migrations.
      *
      * @return void
+     * 
+     * 
+     * migrate:refresh will delete all table and then run migration again.
+     * php artisan db:seed  
      */
     public function up()
     {
         Schema::create('blogs', function (Blueprint $table) {
             $table->id();
+            $table->text('title');
+            $table->text('body');
             $table->timestamps();
         });
     }

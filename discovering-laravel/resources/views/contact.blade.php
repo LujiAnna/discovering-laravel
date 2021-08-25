@@ -10,11 +10,27 @@
 
     <form action="" method="post">
         @csrf
-        <label for="name">Name:</label>
+
+        <!-- "title" => "first title"
+        "body" => "first body" -->
+
+
+        <!-- <label for="name">Name:</label>
         <input type="text" name='name' id='name'>
         <label for="location">Location:</label>
-        <input type="text" name='location' id='location'>
+        <input type="text" name='location' id='location'> -->
+
+        <label for="title">Title:</label>
+        <input type="text" name='title' id='title'>
+        <label for="body">Body:</label>
+        <input type="text" name='body' id='body'>
+
+
         <input type="submit" name='submit' id='submit' value='submit'>
+
+        
+    
+
     </form>
 
     @endsection

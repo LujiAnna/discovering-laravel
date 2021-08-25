@@ -71,8 +71,8 @@ class Controller extends BaseController
         // return request() -> input('name');
 
         // read docs
-        return request() -> only(['name', 'location']);
-
+        // return request() -> only(['name', 'location']);
+        return request() -> only(['title', 'body']);
 
         // return View::make('contact');   
         // return "Submitted Contact";   
