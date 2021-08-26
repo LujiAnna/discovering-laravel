@@ -195,14 +195,39 @@ Switch to one general layout containing your html skeleton. The loaded view shou
 
 ## Forms
 
-🌱 Build a simple form in your view.
+- [x] Build a simple form in your view.
 
-🌱 In Laravel, a route will only respond to a specific type of request (GET or POST for example). Add a route that will react to the form submit (POST method). You'll also need an extra function in your controller.
+- [x] In Laravel, a route will only respond to a specific type of request (GET or POST for example). Add a route that will react to the form submit (POST method). You'll also need an extra function in your controller.
 
-🌱 Find out how you can access form information (after submitting, that is) from the request (hint hint) in your controller in Laravel. Tip: there's a recommended way, not using the normal superglobals like $\_GET and $\_POST. We'll save this info in the next step.
+- [x] Find out how you can access form information (after submitting, that is) from the request (hint hint) in your controller in Laravel. Tip: there's a recommended way, not using the normal superglobals like $\_GET and $\_POST. We'll save this info in the next step.
 
 🌼 Provide simple validation for your form (do so in your controller).
 
 🌼 Customize the validation error messages (can be EN, no need to switch to NL).
 
 🌳 Use a request class to provide the validation. Although a more complex approach, this makes your validation reusable in other places - always think what approach will serve you best.
+
+## Laravel Mix
+
+> Compiling assets with Laravel Mix, if you need to use Preprocessors when using sass/scss, lass, you need the Laravel Mix to compile those to raw/vanilla css. Same for js: if importing modules, vue, npm, you might need to use webpack to be compiled and served to the browser
+> npm package, sending stuff from all over the folders to the public folder to be distributed/used
+> eg style from resources css to public css in a more compact way
+> eg using scss to css into public
+> can also use styling frameworks like tailwind for styling
+
+We now have a lot of functionality at our disposal to start building... but what about the styling? Modern application use Webpack to process all files and combine them into one (for better performance) and rewrite them to something that a browser can understand (sass/scss to css for example). It comes with a bit more setup than a simple UI tool, but offers a lot of functionality and isn't limited to compiling only sass/scss files. [Laravel mix](https://laracasts.com/series/laravel-6-from-scratch/episodes/17) is an extra layer on top of Webpack that allows for easier configuration. It can bring your config file from a couple of 100 lines to 10.
+
+Laravel has two locations for your styling: resources for the raw source, and the compiled result will end up in the public folder.
+
+- npm install
+- npm run mix or dev or prod (check your package json file)
+- Link (import) to your layout the js, css (or whatever folder/file is in it)
+- Always run after making changes to receive the update or `npm run watch` on other untouched terminal to keep running the compiler automatically continuously
+
+- [x] Run npm install to get all JS dependencies (this includes the webpack compiler).
+
+- [x] Adapt the setup to allow you to write sass/scss and compile this to css using [Laravel mix](https://laravel.com/docs/8.x/mix).
+
+🌼 Get rid of bootstrap and switch to your own styling.
+
+🌳 Tailwind css is a utility-first approach. This means it's not about full components (as is Bootstrap), but rather about classes that do one specific thing. With some extra steps, mix can compile this as well. Adapt your setup and give Tailwind a try.

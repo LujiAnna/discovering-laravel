@@ -11,7 +11,10 @@ const mix = require('laravel-mix');
  |
  */
 
+//  give it: Entry Point and Output Directory
 mix.js('resources/js/app.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css')
+    .sass('resources/sass/contact.sass', 'public/css/contact')
     .postCss('resources/css/app.css', 'public/css', [
         //
-    ]);
+    ]);  

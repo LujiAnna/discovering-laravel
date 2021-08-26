@@ -36,26 +36,28 @@ class Controller extends BaseController
         // get means execute
         $blog = Blog::get();
         //  dd($blog);
-        return $blog;
+        //  dd($blog[0]->title);
+
+        // WHERE: this should go before get(). get() means execute, so you kind of want to choose first
+        // dd(blog::where('title', 'Tech Talk 2'));
+        dd(Blog::where('title', 'Tech Talk 2')->get());
+
+
+
+        // return $blog; 
+
 
         // connect blog with posts
         // avoid n+1 problem: query PLUS foreach
 
         // use 'first' method etc 
 
-        //  dd($ponies[0]->color);
-        //  dd(PONY::where('color', 'pink'));
-
-
          // ORM- Object Relational Map
          // read docs laravel, database, eloquent
         //  can chain relationships with ->
 
-
-
-        //  assignment: save data instead in the form -- CRUD
-        // TODO: prepare my data , then load view
-        return View::make('home', ['name' => 'Anne']);   
+        // prepare my data , then load view
+        // return View::make('home', ['name' => 'Anne']);   
     }
 
     public function contact()
@@ -84,7 +86,7 @@ class Controller extends BaseController
         //     echo '<br>';
         // }
 
-        // Use eloquent to save the data after a form submit.
+        // Use eloquent to save the data after a form submit. :CRUD
            /**
      * Store a new blog in the database.
      *
