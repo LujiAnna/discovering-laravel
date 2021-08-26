@@ -24,11 +24,11 @@
 
         <label for="title">Title:</label>
         <input type="text" name='title' id='title'>
-        <label for="body">Body:</label>
+        <label for="body">Post Yellow:</label>
         <input type="text" name='body' id='body'>
 
 
-        <input type="submit" name='submit' id='submit' value='submit'>
+        <input type="submit" name='submit' id='submit' value='yellow'>
 
         
     

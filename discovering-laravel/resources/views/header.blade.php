@@ -1,4 +1,3 @@
 <header>
-  <h1>DailyPost</h1>
-  <p>Post your view here and submit</p>
+  <h1>Yellow</h1>
 </header>

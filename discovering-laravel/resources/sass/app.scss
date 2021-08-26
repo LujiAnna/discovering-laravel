@@ -1,4 +1,4 @@
-$primary: green;
+$primary: rgb(71, 57, 57);
 
 body {
   color: $primary;
@@ -6,7 +6,9 @@ body {
 
 input[type=submit] {
   padding: 3px 10px;
-  font-size: 12px;
-  border-radius: 3px;
-  border: 1px solid #e1e4e8;
+  font-size: 1.5 rem;
+  border-radius: 4px;
+  background-color: rgb(225, 228, 50);
+  background: 1px solid  rgb(225, 228, 50);
+  color: #000;
 }

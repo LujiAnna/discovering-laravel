@@ -1,11 +1,13 @@
 body {
-  color: green;
+  color: #473939;
 }
 
 input[type=submit] {
   padding: 3px 10px;
-  font-size: 12px;
-  border-radius: 3px;
-  border: 1px solid #e1e4e8;
+  font-size: 1.5 rem;
+  border-radius: 4px;
+  background-color: #e1e432;
+  background: 1px solid #e1e432;
+  color: #000;
 }
 

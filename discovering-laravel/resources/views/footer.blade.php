@@ -1,5 +1,4 @@
 <footer>
-  <p>Don't forget to like and subscribe.</p>
   <form action="" method="post">
     <!-- validate request: https://laravel.com/docs/8.x/blade#csrf-field -->
     @csrf
@@ -14,9 +13,9 @@
     <label for="location">Location:</label>
     <input type="text" name='location' id='location'> -->
 
-    <label for="email">Subscribe:</label>
-    <input type="email" name='email' id='email'>
+    <label for="email">Like and Subscribe:</label>
+    <input type="email" name='email' id='email' placeholder ='Email'>
 
-    <input type="submit" name='subscribe' id='subscribe' value='subscribe'>
+    <input type="submit" name='subscribe' id='subscribe' value='Sign up (FREE)' >
 </form>
 </footer>

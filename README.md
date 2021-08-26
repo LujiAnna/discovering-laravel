@@ -231,3 +231,5 @@ Laravel has two locations for your styling: resources for the raw source, and th
 🌼 Get rid of bootstrap and switch to your own styling.
 
 🌳 Tailwind css is a utility-first approach. This means it's not about full components (as is Bootstrap), but rather about classes that do one specific thing. With some extra steps, mix can compile this as well. Adapt your setup and give Tailwind a try.
+
+- TL;DR : laracast
