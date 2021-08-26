@@ -14,6 +14,32 @@
 
 Composer is a tool that helps you manage any PHP installations, as npm can do for JS. You can install it locally (available project wide) or globally (system wide, recommended). If you have any trouble, you might want to read about how the [PATH](https://superuser.com/questions/284342/what-are-path-and-other-environment-variables-and-how-can-i-set-or-use-them) variable determines things to load on startup (so they can be accessed anywhere)
 
+# TL;DR
+
+```
+* Download again:
+~ curl -sS https://getcomposer.org/installer | php
+
+* Change permission
+~ chmod 755 composer.phar
+
+* Move and rename
+~ sudo mv composer.phar /usr/local/bin/composer
+```
+
+```
+composer create-project laravel/laravel example-app
+
+cd example-app
+
+composer install
+
+npm install
+
+php artisan serve
+
+```
+
 RETRY: https://askubuntu.com/questions/116960/global-installation-of-composer-manual
 
 1. Open a terminal and navigate to your user directory, ie cd /User/<USER_NAME>/
@@ -81,6 +107,14 @@ Once we have the prerequisites, we can read about the Laravel installation. Ther
 `php artisan serve`
 ```
 
+# composer install
+
+- composer install
+
+# run project
+
+- php artisan serve
+
 What about installing with Laravel Sail? This is an option based on a Docker container: it contains your full environment (PHP, Apache, ...) and is specific to your project. Since we already have most of what we need, we'll actually use our available local setup.
 
 - push to git init repo `git remote add origin [copied web address]`
@@ -138,17 +172,37 @@ Then just use it like:
 
 $ composer ...
 
-# try again with setting PATH in the
+- try again with setting PATH in the
 
-# Shortcut TL;DR
+## Version
 
-```
-* Download again:
-~ curl -sS https://getcomposer.org/installer | php
+- Laravel v8.55.0 (PHP v7.4.16)
+- Composer (version 2.1.6)
 
-* Change permission
-~ chmod 755 composer.phar
+Nice-to-have features
+🪴 Find out about named routes. Add two more pages who link to each other using that name.
 
-* Move and rename
-~ sudo mv composer.phar /usr/local/bin/composer
-```
+🌳 Figure out how you can access any $_GET_ parameters in your controller without using any superglobals.
+
+# Blade View
+
+- [Tutorial](https://laracasts.com/series/laravel-8-from-scratch/episodes/14)
+- [Documentation](https://laravel.com/docs/8.x/blade#blade-directives)
+
+  🌱 Build the homepage using Blade. Have at least three parts: your actual page, and a header and footer to be included. Provide some content for this page to your liking. Use Bootstrap (or another components based css framework) for the styling. (don't spend too much on styling)
+
+Switch to one general layout containing your html skeleton. The loaded view should extend from this layout and add page specific content.
+
+## Forms
+
+🌱 Build a simple form in your view.
+
+🌱 In Laravel, a route will only respond to a specific type of request (GET or POST for example). Add a route that will react to the form submit (POST method). You'll also need an extra function in your controller.
+
+🌱 Find out how you can access form information (after submitting, that is) from the request (hint hint) in your controller in Laravel. Tip: there's a recommended way, not using the normal superglobals like $\_GET and $\_POST. We'll save this info in the next step.
+
+🌼 Provide simple validation for your form (do so in your controller).
+
+🌼 Customize the validation error messages (can be EN, no need to switch to NL).
+
+🌳 Use a request class to provide the validation. Although a more complex approach, this makes your validation reusable in other places - always think what approach will serve you best.

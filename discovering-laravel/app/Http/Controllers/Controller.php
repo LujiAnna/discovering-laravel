@@ -86,7 +86,7 @@ class Controller extends BaseController
 
         // Use eloquent to save the data after a form submit.
            /**
-     * Store a new flight in the database.
+     * Store a new blog in the database.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
