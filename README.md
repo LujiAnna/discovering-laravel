@@ -233,3 +233,17 @@ Laravel has two locations for your styling: resources for the raw source, and th
 🌳 Tailwind css is a utility-first approach. This means it's not about full components (as is Bootstrap), but rather about classes that do one specific thing. With some extra steps, mix can compile this as well. Adapt your setup and give Tailwind a try.
 
 - TL;DR : laracast
+
+## Functionality with Pa
+
+ckages from Packagist (The PHP Package Repository);
+
+🌱 Install [clockwork](https://github.com/itsgoingd/clockwork). Experiment with all the extra debug features it provides.
+
+- [x] Install through composer: composer require itsgoingd/clockwork or/and as chrome extension
+
+🌳 Explore [Packagist](https://packagist.org/packages/laravel/laravel) / Github for other packages you like. Install and experiment at wish.
+
+🌳 Learn about the versioning system of your packages. Verify that you have set the versioning constraints in a safe way. (= it will not pull any breaking changes automatically) What's the role of composer.lock in all this?
+
+- [Create](https://wisdmlabs.com/blog/create-package-laravel/)

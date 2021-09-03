@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-// namespace App\Http\Controllers\UserController;
-
 // add the laravel extension
 
 use Illuminate\Http\Request;
@@ -21,43 +19,14 @@ class Controller extends BaseController
 
     public function user()
     {
-
         // TODO: prepare my data , then load view
         return view('user'); 
     }
 
     public function home()
     {
-         // normally query starts then model. Laravel does vice versa
-        //  TODO: Connect model -> prepare this one in .env and php artisan make:model Blog --all
-        //  TODO: Build query 
-
-        
-        // get means execute
         $blog = Blog::get();
-        //  dd($blog);
-        //  dd($blog[0]->title);
-
-        // WHERE: this should go before get(). get() means execute, so you kind of want to choose first
-        // dd(blog::where('title', 'Tech Talk 2'));
-        dd(Blog::where('title', 'Tech Talk 2')->get());
-
-
-
-        // return $blog; 
-
-
-        // connect blog with posts
-        // avoid n+1 problem: query PLUS foreach
-
-        // use 'first' method etc 
-
-         // ORM- Object Relational Map
-         // read docs laravel, database, eloquent
-        //  can chain relationships with ->
-
-        // prepare my data , then load view
-        // return View::make('home', ['name' => 'Anne']);   
+        return $blog;   
     }
 
     public function contact()
@@ -67,27 +36,7 @@ class Controller extends BaseController
 
     public function submitContact(Request $request)
     {
-        // show data after loading view
-
-        // return View::make('contact');   
-        // return "Submitted Contact"; 
-        // dd('chicken'); //die and dump (like var dump)
-
-        // add form name
-        // return request() -> input('name');
-
-        // read docs
-        // return request() -> only(['name', 'location']);
-
-        // return request() -> only(['title', 'body']);
-
-        // foreach (Blog::all() as $blog) {
-        //     echo $blog->title;
-        //     echo '<br>';
-        // }
-
-        // Use eloquent to save the data after a form submit. :CRUD
-           /**
+    /**
      * Store a new blog in the database.
      *
      * @param  \Illuminate\Http\Request  $request
